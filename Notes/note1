@@ -1,0 +1,85 @@
+ Intention and Programic navigation 256
+Q1
+we get the vlue of Signed from call back function-->
+ this.onAuthChange(this.auth.isSignedIn.get()); where -->this.auth.isSignedIn.get() --> gives true or fale
+ so at first the value of signed when we load the page for first time will be false since we havent signed in
+ ---------------------------------------------------------------------------------------------------------------------
+
+
+ Q2
+ this.onAuthChange(this.auth.isSignedIn.get());
+ we nedd to know intially if its signed in or signed out so when 1st loading this.auth.isSignedIn.get() -->false then 
+ this.onAuthChange(false);
+ so in onAuthChange = Signed =>
+  onAuthChange gets a parameter whose value is false 
+  that is value of signed is false when loading
+ 
+ 
+ onAuthChange = false=> {
+   
+   
+    if (false) {
+      this.props.SignInAction(this.auth.currentUser.get().getId()); 
+    } 
+    this statement is skipped sinse the parameter is false and thus it goes to else 
+    
+    
+    else {
+      this.props.SignOutAction();
+    }
+  };
+  --------------------------------------------------------------------------------------------------------------------------------
+  Q3
+  video 232 steve see the last few min its just destruvtiona dn stuff happeninh there 
+  ------------------------------------------------------------------------------------------------------------------------------------
+  Q4
+  video 233 somewhere after 2min explation on how label is passed from FORM to the renderInput
+  -----------------------------------------------------------------------------------------------------------------------------------
+
+  Q5
+  coding in video 269
+  call back is happening twise.the formValue of index in action get value from  the onFormSubmited of Streamcreate which get the value
+  from onformsumit of StreamForm.  
+  onFormSubmited is told to pass down its param to createStream.
+  so when it is call as props in streamform there it get formvalue as paramter which is the passed to onFormSubmit which does a call back.
+  video 234 somewhere after 3:00 
+  handleSubmit somewhere around 2:35 
+  so this.props.handleSubmit(this.onFormSubmit) gives props to fromvalues
+  ---------------------------------------------------------------------------------------------------------------------------------------
+  Q6 
+  meta 2:28 236
+  ----------------------------------------------------------------------------------------------------------------------------------------
+  Q7     :45sec, 3:20 ,236    3:55 237  metta.error erro is a property tht we get from meta consol.log meta in case of doubt
+  ----------------------------------------------------------------------------------------------------------------------------------------
+  Q8
+    Basic idea on how fromvalues get value video 225. 
+    Fromvalues  contains the value that is entered when the stream channel is created this is how we post values. 
+    So in streamCreate.js in " onSubmit={this.props.handleSubmit(this.onFormSubmit)}" what happens it give the props to onSubmit
+    Now the onSubmit has the properties that has  the title and description.
+    Bassically what happens is when the "onFormSubmit = (formValues) => {this.props.createStream(formValues);};" is called 
+    it passses this value to createStream which is index.js of action. 
+    Where it post the values .more on onSubmit={this.props.handleSubmit(this.onFormSubmit)} in video 234 3:00 and also 
+    on post in small explanation on video 253 4:10
+   -----------------------------------------------------------------------------------------------------------------------------------------------------
+   Q9
+   the reason why we used action.payload instead of is beacuse in action creator of "DELETE_PAYLOAD" we pass just
+    id as payload and not response.data like others so the payload of DELETE_PAYLOAD  just contains the id nothing else
+  _.omit explanation video 249 2:35
+------------------------------------------------------------------------------------------------------------------------------------------
+Q10
+{...stae} here {} represent the object that we want to spread the state to so we fisrt spraed state to a new object and
+ now what _.mapKeys gives is a new object  but we want to add this to the currennt object which contains the value of state which we just added
+ using spraed operator {...stae} for that we add ... in front of _.mapKeys so we get ..._.mapKeysin the it look like 
+ { ...state, ..._.mapKeys(action.payload, "id") }
+ ------------------------------------------------------------------------------------------------------------------------------------------
+ Q11
+ explanation in video 252 2:00
+  what object.values does is it takes all the values from and objecta nd convert it to a array of values same logic for object.keys
+  ------------------------------------------------------------------------------------------------------------------------------------------
+  Q12
+   how BrowserRouter became router  video 259 history explation in 258,259
+   history.push("/") video 260 why'/' watch 260 0:45
+  history.push("/")  is placed inside createStream so when the code runs it will go to specified location
+   so hisory changes was on app.js,index.js of action
+  so when the code runs it will be navigated to path specified by history.push. code run when we click on sumbit the button
+  Remeber THIS WORKS ONLY when some code runs no use if you are just console.log ing anything
