@@ -1,0 +1,37 @@
+{
+  "streams": [
+    {
+      "title": "My first stream",
+      "description": "This Is Great !",
+      "id": 1
+    },
+    {
+      "title": "sonuraj",
+      "description": "COME ON YOU GUNNERS !!",
+      "id": 5
+    },
+    {
+      "title": "hey",
+      "description": "testing",
+      "id": 7
+    },
+    {
+      "title": "BINCY",
+      "description": "BABZ",
+      "userId": "110438912938836947066",
+      "id": 12
+    },
+    {
+      "title": "SONURAJ",
+      "description": " P",
+      "userId": "110438912938836947066",
+      "id": 13
+    },
+    {
+      "title": "ghk",
+      "description": "ghkc",
+      "userId": "108559435221753390540",
+      "id": 14
+    }
+  ]
+}
